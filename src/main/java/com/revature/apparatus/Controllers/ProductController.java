@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 
@@ -32,7 +33,7 @@ public class ProductController {
     }
 
     // to use this endpoint send JSON {"input":"seach string goes here"}
-    @GetMapping(path="/search")
+    @PostMapping(path="/search")
     public Iterable<Product> getSearchResults(@RequestBody Search search) {
         return productRepository.search(search.getInput());
     }
