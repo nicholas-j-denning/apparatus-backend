@@ -13,7 +13,8 @@ public class Product {
     private int id;
     private String name;
     private String description;
-    private float price;
+    private double price;
+    private double sale_price;
     private String category;
     private String image_url;
 
@@ -41,12 +42,20 @@ public class Product {
         this.description = description;
     }
 
-    public float getPrice() {
+    public double getPrice() {
         return this.price;
     }
 
-    public void setPrice(float price) {
+    public void setPrice(double price) {
         this.price = price;
+    }
+
+    public double getSale_price() {
+        return this.sale_price;
+    }
+
+    public void setSale_price(double sale_price) {
+        this.sale_price = sale_price;
     }
 
     public String getCategory() {
