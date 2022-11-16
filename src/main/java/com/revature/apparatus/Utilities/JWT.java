@@ -42,26 +42,16 @@ public class JWT {
 
 
 
-    public User parseJWTtoUser(String jws)  {
-        try {
-            User result = Jwts.parserBuilder()
-                            .setSigningKey(key)
-                            .deserializeJsonWith(new JacksonDeserializer(Maps.of("user", User.class).build()))
-                            .build()
-                            .parseClaimsJws(jws)
-                            .getBody()
-                            .get("user", User.class);
+    public User parseJWTtoUser(String jws) throws SignatureException, ExpiredJwtException {
+        User result = Jwts.parserBuilder()
+                        .setSigningKey(key)
+                        .deserializeJsonWith(new JacksonDeserializer(Maps.of("user", User.class).build()))
+                        .build()
+                        .parseClaimsJws(jws)
+                        .getBody()
+                        .get("user", User.class);
 
-            return result;
-        } 
-        catch (SignatureException e) { 
-            e.printStackTrace();
-            return null; 
-        } 
-        catch (ExpiredJwtException e) { 
-            return null;
-        }
-        
+        return result; 
     }
 
 }

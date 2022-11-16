@@ -13,6 +13,7 @@ import com.revature.apparatus.DTOs.RegisterDTO;
 import com.revature.apparatus.Exceptions.UserAlreadyExistsException;
 import com.revature.apparatus.Exceptions.UserNotFoundException;
 import com.revature.apparatus.Exceptions.WrongPasswordException;
+import com.revature.apparatus.Models.Message;
 import com.revature.apparatus.Models.User;
 import com.revature.apparatus.Services.UserService;
 import com.revature.apparatus.Utilities.JWT;
@@ -33,14 +34,6 @@ import org.springframework.http.ResponseEntity;
 @CrossOrigin(origins = "http://localhost:4200/", allowCredentials = "true")
 @AllowSysOut
 public class UserController {
-
-    private class Message {
-        public String message;
-
-        public Message(String message) {
-            this.message = message;
-        }
-    }
    
     @Autowired
     private UserService userService;
