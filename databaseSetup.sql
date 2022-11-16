@@ -409,8 +409,10 @@ INSERT INTO product
 
 -- Create Users table. The name "user" is reserved keyword, so the name is "users".
 CREATE TABLE IF NOT EXISTS users (
-	user_id SERIAL PRIMARY KEY,
-    user_login VARCHAR(100) UNIQUE NOT NULL,
-    user_encryptedPassword VARCHAR(100) NOT NULL,
-    user_salt BYTEA NOT NULL
+	id SERIAL PRIMARY KEY,
+    first_name TEXT,
+    last_name TEXT,
+    email TEXT,
+    encrypted_password TEXT,
+    salt BYTEA
 );
