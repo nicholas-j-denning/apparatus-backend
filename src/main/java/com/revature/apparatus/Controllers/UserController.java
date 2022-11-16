@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.servlet.function.ServerResponse.HeadersBuilder;
 
 import com.revature.apparatus.DTOs.LoginDTO;
 import com.revature.apparatus.DTOs.RegisterDTO;
@@ -19,13 +18,11 @@ import com.revature.apparatus.Services.UserService;
 import com.revature.apparatus.Utilities.JWT;
 
 import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.hibernate.internal.build.AllowSysOut;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseCookie;
 import org.springframework.http.ResponseEntity;
@@ -88,7 +85,7 @@ public class UserController {
 
 
     @GetMapping(path="/logout")
-    public ResponseEntity<Message> logout(@RequestHeader(value = "Cookie") String header,HttpServletRequest request, HttpServletResponse response) {
+    public ResponseEntity<Message> logout(HttpServletResponse response) {
         try {
             Cookie deleteCookie = new Cookie("token", null);
             deleteCookie.setMaxAge(0);
