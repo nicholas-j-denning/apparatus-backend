@@ -1,4 +1,5 @@
 -- Delete everything and start fresh
+DROP TABLE IF EXISTS cart;
 DROP TABLE IF EXISTS product;
 DROP TABLE IF EXISTS category;
 DROP TABLE IF EXISTS users;
@@ -458,3 +459,11 @@ CREATE TABLE IF NOT EXISTS users (
     encrypted_password TEXT,
     salt BYTEA
 );
+
+CREATE TABLE cart (
+    id INTEGER PRIMARY KEY,
+    user_id INTEGER REFERENCES users(id),
+    product_id INTEGER REFERENCES product(id)
+);
+
+INSERT INTO users (id) VALUES(1);
