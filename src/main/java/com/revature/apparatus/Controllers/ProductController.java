@@ -17,7 +17,6 @@ import com.revature.apparatus.Repositories.ProductRepository;
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping(path="/product")
-@CrossOrigin("http://localhost:4200")
 public class ProductController {
 
     @Autowired
