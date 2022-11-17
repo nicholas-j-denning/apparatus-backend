@@ -20,8 +20,8 @@ CREATE TABLE product(
     id SERIAL PRIMARY KEY,
     name VARCHAR NOT NULL,
     description TEXT NOT NULL,
+    normal_price NUMERIC NOT NULL,
     price NUMERIC NOT NULL,
-    sale_price NUMERIC NOT NULL,
     category VARCHAR REFERENCES category(category),
     image_URL VARCHAR NOT NULL
 );

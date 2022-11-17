@@ -13,6 +13,6 @@ public interface ProductRepository extends JpaRepository<Product, Integer> {
     @Query("SELECT p FROM Product p WHERE lower(p.name) LIKE '%'||lower(?1)||'%' OR lower(p.description) LIKE '%'||lower(?1)||'%'")
     Collection<Product> search(String input);
 
-    @Query("SELECT p FROM Product p WHERE p.price > p.sale_price")
+    @Query("SELECT p FROM Product p WHERE p.price < p.normal_price")
     Collection<Product> getSaleProducts();
 }

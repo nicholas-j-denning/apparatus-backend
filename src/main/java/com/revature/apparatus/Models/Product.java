@@ -13,8 +13,8 @@ public class Product {
     private int id;
     private String name;
     private String description;
+    private double normal_price;
     private double price;
-    private double sale_price;
     private String category;
     private String image_url;
 
@@ -42,20 +42,20 @@ public class Product {
         this.description = description;
     }
 
+    public double getNormal_price() {
+        return this.normal_price;
+    }
+
+    public void setNormal_price(double normal_price) {
+        this.normal_price = normal_price;
+    }
+
     public double getPrice() {
         return this.price;
     }
 
     public void setPrice(double price) {
         this.price = price;
-    }
-
-    public double getSale_price() {
-        return this.sale_price;
-    }
-
-    public void setSale_price(double sale_price) {
-        this.sale_price = sale_price;
     }
 
     public String getCategory() {
@@ -73,5 +73,4 @@ public class Product {
     public void setImage_url(String image_url) {
         this.image_url = image_url;
     }
-
 }
