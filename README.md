@@ -12,8 +12,17 @@
 2. Clone this repository
 3. Start a Posgres instance
 4. Execute the databaseSetup.sql script to initialize the database (You can use DBeaver for this)
-5. Run the application on port 8080 with your IDE or with "mvn spring-boot:run" on the command line in the project root directory
-6. Run the frontend according to the README in the frontend repo
+5. Create a folder src/main/resources 
+6. Add an application.properties file to that folder like this, but with your local database url, username, and password
+```
+spring.jpa.hibernate.ddl-auto=update
+spring.datasource.url=jdbc:postgresql://localhost:5432/postgres
+spring.datasource.username=postgres
+spring.datasource.password=password
+spring.datasource.driver-class-name=org.postgresql.Driver
+```
+7. Run the application on port 8080 with your IDE or with "mvn spring-boot:run" on the command line in the project root directory
+8. Run the frontend according to the README in the frontend repo
 
 ## Endpoints
 ### GET localhost:8080/product/all
