@@ -21,7 +21,7 @@ spring.datasource.username=postgres
 spring.datasource.password=password
 spring.datasource.driver-class-name=org.postgresql.Driver
 ```
-7. Run the application on port 8080 with your IDE or with "mvn spring-boot:run" on the command line in the project root directory
+7. Run the application on port 8080 by running with your IDE or with "mvn spring-boot:run" on the command line in the project root directory
 8. Run the frontend according to the README in the frontend repo
 
 ## Endpoints
