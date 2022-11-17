@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import com.revature.apparatus.Interface.AuthenticatedUser;
 import com.revature.apparatus.Models.Cart;
 //import com.revature.apparatus.Models.Search;
 import com.revature.apparatus.Repositories.CartRepository;
@@ -27,6 +28,8 @@ public class CartController {
         return cartRepository.findAll();
     }
 
+    @AuthenticatedUser
+    @CrossOrigin(origins = "http://localhost:4200", allowCredentials = "true")
     @PostMapping(path="/add/{user_id}/{product_id}")
     public Cart addCartItem(@PathVariable int user_id, @PathVariable int product_id){
         // Create JSON object here

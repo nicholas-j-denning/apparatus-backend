@@ -42,7 +42,7 @@ public class UserController {
     private JWT jwt;
 
     @PostMapping(path="/login", consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Object> login(HttpServletResponse response, @RequestBody LoginDTO credentials) {
+    public ResponseEntity<Object> login(@RequestBody LoginDTO credentials) {
         try {
             User user = userService.login(credentials);
             

@@ -29,7 +29,10 @@ public class AuthAspect {
     @Autowired
     private JWT jwt;
 
-    @Around("within(com.revature.apparatus.Controllers.AuthenticatedUserController)")
+    @Pointcut(value = "@annotation(com.revature.apparatus.Interface.AuthenticatedUser)")
+    public void targetForAuthentication(){};
+
+    @Around("targetForAuthentication()")
     public Object validateJWT(ProceedingJoinPoint pjp) {
         Object returnedObject = null;
         Object[] args = pjp.getArgs();
