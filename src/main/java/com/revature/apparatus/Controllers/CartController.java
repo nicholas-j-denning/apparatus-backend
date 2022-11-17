@@ -1,5 +1,10 @@
 package com.revature.apparatus.Controllers;
 
+
+import java.util.Collection;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Optional;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,8 +15,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import com.revature.apparatus.Interface.AuthenticatedUser;
 import com.revature.apparatus.Models.Cart;
+import com.revature.apparatus.Models.Product;
 //import com.revature.apparatus.Models.Search;
 import com.revature.apparatus.Repositories.CartRepository;
+import com.revature.apparatus.Repositories.ProductRepository;
 
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController
@@ -20,6 +27,8 @@ public class CartController {
 
     @Autowired
     private CartRepository cartRepository;
+    @Autowired
+    private ProductRepository productRepository;
 
     @GetMapping(path="/all")
     public Iterable<Cart> getAllCartItems() {
@@ -40,6 +49,15 @@ public class CartController {
     
     //create function to loop through list of cart objects
     //for each cart object, call productRepository.findItemById(product_id)
-
+    @GetMapping(path="/find/{user_id}")
+    public List<Product> getUserItems(@PathVariable Integer user_id){
+        Collection<Cart> collection = cartRepository.getUserItems(user_id);
+        List<Product> products = new LinkedList<Product>();
+        for(Cart cart: collection) {
+            Optional<Product> op = productRepository.findById(cart.getProductId());
+            products.add(op.get());
+        }
+        return products;
+    }
 
 }
