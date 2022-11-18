@@ -1,5 +1,7 @@
 package com.revature.apparatus.Models;
 
+import java.util.Arrays;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -58,6 +60,12 @@ public class User {
         user.setGenerateEncryptedPassword(registerDTO.getPassword());
 
         return user;
+    }
+
+    @Override
+    public String toString() {
+        return "User [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email
+                + ", encryptedPassword=" + encryptedPassword + ", salt=" + Arrays.toString(salt) + "]";
     }
     
 }
