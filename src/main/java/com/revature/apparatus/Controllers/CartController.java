@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
+//import org.springframework.web.bind.annotation.RequestBody;
 
 import com.revature.apparatus.Models.Cart;
 import com.revature.apparatus.Models.Product;
@@ -63,7 +63,17 @@ public class CartController {
             products.add(op.get());
         }
         return products;
+    }
 
+    @GetMapping(path="/total/{user_id}")
+    public float getTotal(@PathVariable Integer user_id) {
+        Collection<Cart> collection = cartRepository.getUserItems(user_id);
+        float total = 0.00f;
+        for(Cart cart: collection) {
+            Optional<Product> op = productRepository.findById(cart.getProductId());
+            total += op.get().getPrice();
+        }
+        return total;
     }
 
 }
