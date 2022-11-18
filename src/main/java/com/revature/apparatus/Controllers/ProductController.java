@@ -37,5 +37,11 @@ public class ProductController {
     public Iterable<Product> getSearchResults(@RequestBody Search search) {
         return productRepository.search(search.getInput());
     }
+
+    @GetMapping(path="/sales")
+    public Iterable<Product> getSales() {
+        return productRepository.getSaleProducts();
+    }
+
     
 }

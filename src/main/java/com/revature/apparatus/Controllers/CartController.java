@@ -49,6 +49,14 @@ public class CartController {
     
     //create function to loop through list of cart objects
     //for each cart object, call productRepository.findItemById(product_id)
+
+    @PostMapping(path = "/add/{userID}/{productID}/{quantity}")
+    public void addCartItemMultiple(@PathVariable int userID, @PathVariable int productID, @PathVariable int quantity){
+        for(int i = 0; i < quantity; i++){
+            Cart item = new Cart(userID, productID);
+            cartRepository.save(item);}
+        }
+
     @GetMapping(path="/find/{user_id}")
     public List<Product> getUserItems(@PathVariable Integer user_id){
         Collection<Cart> collection = cartRepository.getUserItems(user_id);
@@ -58,6 +66,10 @@ public class CartController {
             products.add(op.get());
         }
         return products;
+
     }
 
 }
+
+
+
