@@ -6,14 +6,10 @@ import org.apache.catalina.connector.RequestFacade;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
-import org.aspectj.lang.reflect.CodeSignature;
-import org.hibernate.internal.build.AllowSysOut;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.RequestHeader;
 
 import com.revature.apparatus.Models.Message;
 import com.revature.apparatus.Utilities.JWT;
@@ -35,12 +31,21 @@ public class AuthAspect {
     @Around("targetForAuthentication()")
     public Object validateJWT(ProceedingJoinPoint pjp) {
         Object returnedObject = null;
-        Object[] args = pjp.getArgs();
+        RequestFacade requestFacade = null;
         String token = null;
-        
-        RequestFacade requestFacade = (RequestFacade) args[0];
-        Cookie[] cookies =  requestFacade.getCookies();
+        Cookie[] cookies = null;
 
+        Object[] args = pjp.getArgs();
+        
+        /* Finds a header of request */
+        for (Object arg : args) {
+            if (arg.getClass() == RequestFacade.class) requestFacade = (RequestFacade) arg;
+        }
+
+        /* If the header was found, extract cookies*/
+        if (requestFacade != null) cookies =  requestFacade.getCookies();
+
+        /* If there is any cookie, it looks for token (JWT) */
         if (cookies != null) {    
             for (Cookie cookie : cookies) {
                 if (cookie.getName().equals("token")) token = cookie.getValue();
@@ -51,12 +56,8 @@ public class AuthAspect {
                     jwt.parseJWTtoUser(token);
                     returnedObject = pjp.proceed();
                     return returnedObject;
-                } catch (MalformedJwtException e) {
-
-                } catch (SignatureException e) {
-                    
-                } catch (ExpiredJwtException e) {
-                    
+                } catch (MalformedJwtException | SignatureException | ExpiredJwtException e) {
+                    /* There is no need to care about invalid JWT token, just return result that a user is not authenticated */
                 } catch (Throwable e) {
                     e.printStackTrace();
                 }

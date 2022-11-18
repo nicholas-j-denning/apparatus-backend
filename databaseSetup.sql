@@ -3,6 +3,7 @@ DROP TABLE IF EXISTS cart;
 DROP TABLE IF EXISTS product;
 DROP TABLE IF EXISTS category;
 DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS profile;
 
 -- One record per product category
 CREATE TABLE category(
@@ -458,6 +459,14 @@ CREATE TABLE IF NOT EXISTS users (
     email TEXT,
     encrypted_password TEXT,
     salt BYTEA
+);
+
+CREATE TABLE profile (
+	id SERIAL PRIMARY KEY,
+	phone_number TEXT,
+	gender TEXT,
+	dob TEXT,
+	user_id INTEGER REFERENCES users(id)
 );
 
 CREATE TABLE cart (
