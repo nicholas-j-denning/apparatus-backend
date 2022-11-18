@@ -1,7 +1,5 @@
 package com.revature.apparatus.Controllers;
 
-import java.util.Optional;
-
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,13 +46,11 @@ public class AuthUserController {
 
     @GetMapping("/profile")
     public ResponseEntity<Object> profile(HttpServletRequest request) {
-        Optional<UserProfile> userProfile = null;
+        UserProfile userProfile = null;
         try {
-            userProfile = authUserService.profile(request); 
-            if (userProfile.isEmpty()) {
-                return ResponseEntity.badRequest().body(new Message("The profile has not been found."));
-            }
-            return ResponseEntity.ok(userProfile.get()); 
+            userProfile = authUserService.profile(request);
+            return (userProfile == null) ? ResponseEntity.badRequest().body(new Message("The profile has not been found.")) :
+                                           ResponseEntity.ok(userProfile); 
         } catch (SignatureException | ExpiredJwtException e) {
             return ResponseEntity.badRequest().body(new Message("The session has been expired. Please reload a page and login again."));
         } catch (Exception e) {

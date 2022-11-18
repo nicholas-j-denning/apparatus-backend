@@ -1,7 +1,5 @@
 package com.revature.apparatus.Services;
 
-import java.util.Optional;
-
 import javax.servlet.http.HttpServletRequest;
 
 import org.hibernate.internal.build.AllowSysOut;
@@ -66,10 +64,10 @@ public class AuthUserService {
     }
 
 
-    public Optional<UserProfile> profile(HttpServletRequest request) throws SignatureException, ExpiredJwtException {
+    public UserProfile profile(HttpServletRequest request) throws SignatureException, ExpiredJwtException {
         String token = cookieParser.parseCookie(request.getCookies(), "token");
         User user = jwt.parseJWTtoUser(token);
 
-        return userProfileRepository.findById(user.getId());
+        return userProfileRepository.findByUser(user);
     }
 }
