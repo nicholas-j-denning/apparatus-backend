@@ -4,10 +4,14 @@ import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;
+
+import javax.transaction.Transactional;
+
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -66,14 +70,20 @@ public class CartController {
     }
 
     @GetMapping(path="total/{user_id}")
-    public float getTotal(@PathVariable Integer user_id) {
+    public double getTotal(@PathVariable Integer user_id) {
         Collection<Cart> collection = cartRepository.getUserItems(user_id);
-        float total = 0.00f;
+        double total = 0.00;
         for(Cart cart: collection) {
             Optional<Product> op = productRepository.findById(cart.getProductId());
             total += op.get().getPrice();
         }
         return total;
+    }
+
+    @DeleteMapping(path="clear/{user_id}")
+    @Transactional
+    public Integer clearCart(@PathVariable Integer user_id){
+        return cartRepository.clearByUser(user_id);
     }
 
 }
