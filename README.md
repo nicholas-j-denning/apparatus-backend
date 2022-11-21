@@ -39,6 +39,8 @@ Retuns a list all cart records for all users as JSON including id, product_id, c
 Creates a cart record to add {product_id} to {user_id}'s cart. Returns the record to confirm success. May only be called by an authenticated user
 ### GET localhost:8080/cart/find/{user_id}
 Returns a list of all products in {user_id}'s cart
+### DELETE locolhost:8080/cart/clear/{user_id}
+Clears all items from a given user's cart
 ### POST localhost:8080/user/login
 Send JSON body in the format {email:"user@email.com",password:"userpassword"} to login a user using JWT
 ### POST localhost:8080/user/register
