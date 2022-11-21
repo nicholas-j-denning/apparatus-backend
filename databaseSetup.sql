@@ -901,5 +901,3 @@ CREATE TABLE cart (
     user_id INTEGER REFERENCES users(id),
     product_id INTEGER REFERENCES product(id)
 );
-
-INSERT INTO users (id) VALUES(1);
