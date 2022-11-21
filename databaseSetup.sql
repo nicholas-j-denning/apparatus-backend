@@ -1,9 +1,9 @@
 -- Delete everything and start fresh
+DROP TABLE IF EXISTS profile;
 DROP TABLE IF EXISTS cart;
 DROP TABLE IF EXISTS product;
 DROP TABLE IF EXISTS category;
 DROP TABLE IF EXISTS users;
-DROP TABLE IF EXISTS profile;
 
 -- One record per product category
 CREATE TABLE category(
@@ -398,21 +398,9 @@ VALUES(
         'device', 
         '/img/device' || 14 || '.jpg'
     ); 
--- Insert devices
-/* INSERT INTO product 
-    SELECT 
-        i+23, 
-        'Device ' || i::text, 
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 
-        999999.99, 
-        999999.99, 
-        'device', 
-        '/img/device' || i::text || '.jpg'
-        FROM generate_series(1,14) AS t(i)
-   ;  */
 
 -- Insert gadgets
-INSERT INTO product 
+/* INSERT INTO product 
     SELECT 
         i+37, 
         'Gadget ' || i::text, 
@@ -422,10 +410,100 @@ INSERT INTO product
         'gadget', 
         '/img/gadget' || i::text || '.jpg'
         FROM generate_series(1,9) AS t(i)
-   ; 
+   ;  */
+INSERT INTO product 
+VALUES(
+    38, 
+    'PsiPhone 26', 
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 
+    999999.99, 
+    999999.99, 
+    'gadget', 
+    '/img/gadget1.jpg'
+); 
+INSERT INTO product 
+VALUES(
+    39, 
+    'Pocket Dimensional Analyzer', 
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 
+    999999.99, 
+    999999.99, 
+    'gadget', 
+    '/img/gadget2.jpg'
+); 
+INSERT INTO product 
+VALUES(
+    40, 
+    'Flux Resynthesizer', 
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 
+    999999.99, 
+    999999.99, 
+    'gadget', 
+    '/img/gadget3.jpg'
+); 
+INSERT INTO product 
+VALUES(
+    41, 
+    'Programmable Gyroclock', 
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 
+    999999.99, 
+    999999.99, 
+    'gadget', 
+    '/img/gadget4.jpg'
+); 
+INSERT INTO product 
+VALUES(
+    42, 
+    'Biosynthesis Validator', 
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 
+    999999.99, 
+    999999.99, 
+    'gadget', 
+    '/img/gadget5.jpg'
+); 
+INSERT INTO product 
+VALUES(
+    43, 
+    'Hydrochromoscope', 
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 
+    999999.99, 
+    999999.99, 
+    'gadget', 
+    '/img/gadget6.jpg'
+); 
+INSERT INTO product 
+VALUES(
+    44, 
+    'Industrial Centralizer', 
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 
+    999999.99, 
+    999999.99, 
+    'gadget', 
+    '/img/gadget7.jpg'
+); 
+INSERT INTO product 
+VALUES(
+    45, 
+    'Planar Digitizer', 
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 
+    999999.99, 
+    999999.99, 
+    'gadget', 
+    '/img/gadget8.jpg'
+); 
+INSERT INTO product 
+VALUES(
+    46, 
+    'Autoparenting Unit', 
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 
+    999999.99, 
+    999999.99, 
+    'gadget', 
+    '/img/gadget9.jpg'
+); 
 
 -- Insert gizmos
-INSERT INTO product 
+/* INSERT INTO product 
     SELECT 
         i+46, 
         'Gizmo ' || i::text, 
@@ -435,10 +513,130 @@ INSERT INTO product
         'gizmo', 
         '/img/gizmo' || i::text || '.jpg'
         FROM generate_series(1,12) AS t(i)
-   ; 
+   ;  */
+INSERT INTO product 
+VALUES(
+    47, 
+    'Calibration Widget', 
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 
+    999999.99, 
+    999999.99, 
+    'gizmo', 
+    '/img/gizmo1.jpg'
+); 
+INSERT INTO product 
+VALUES(
+    48, 
+    'Nanoverter', 
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 
+    999999.99, 
+    999999.99, 
+    'gizmo', 
+    '/img/gizmo2.jpg'
+); 
+INSERT INTO product 
+VALUES(
+    49, 
+    'Miniportal', 
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 
+    999999.99, 
+    999999.99, 
+    'gizmo', 
+    '/img/gizmo3.jpg'
+); 
+INSERT INTO product 
+VALUES(
+    50, 
+    'Transmagnetic Key', 
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 
+    999999.99, 
+    999999.99, 
+    'gizmo', 
+    '/img/gizmo4.jpg'
+); 
+INSERT INTO product 
+VALUES(
+    51, 
+    'Autotonic Circuit', 
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 
+    999999.99, 
+    999999.99, 
+    'gizmo', 
+    '/img/gizmo5.jpg'
+); 
+INSERT INTO product 
+VALUES(
+    52, 
+    'Field Bridge', 
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 
+    999999.99, 
+    999999.99, 
+    'gizmo', 
+    '/img/gizmo6.jpg'
+); 
+INSERT INTO product 
+VALUES(
+    53, 
+    'Neural Decoder', 
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 
+    999999.99, 
+    999999.99, 
+    'gizmo', 
+    '/img/gizmo7.jpg'
+); 
+INSERT INTO product 
+VALUES(
+    54, 
+    'Self-Balancing Gizmo', 
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 
+    999999.99, 
+    999999.99, 
+    'gizmo', 
+    '/img/gizmo8.jpg'
+); 
+INSERT INTO product 
+VALUES(
+    55, 
+    'Gyrobalance', 
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 
+    999999.99, 
+    999999.99, 
+    'gizmo', 
+    '/img/gizmo9.jpg'
+); 
+INSERT INTO product 
+VALUES(
+    56, 
+    'Clockwork Torquer', 
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 
+    999999.99, 
+    999999.99, 
+    'gizmo', 
+    '/img/gizmo10.jpg'
+); 
+INSERT INTO product 
+VALUES(
+    57, 
+    'Frequency Scrambler Set', 
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 
+    999999.99, 
+    999999.99, 
+    'gizmo', 
+    '/img/gizmo11.jpg'
+); 
+INSERT INTO product 
+VALUES(
+    58, 
+    'Spherometer', 
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 
+    999999.99, 
+    999999.99, 
+    'gizmo', 
+    '/img/gizmo12.jpg'
+); 
 
 -- Insert machines
-INSERT INTO product 
+/* INSERT INTO product 
     SELECT 
         i+58, 
         'Machine ' || i::text, 
@@ -448,7 +646,236 @@ INSERT INTO product
         'machine', 
         '/img/machine' || i::text || '.jpg'
         FROM generate_series(1,25) AS t(i)
-   ; 
+   ;  */
+INSERT INTO product 
+VALUES(
+    59, 
+    'Gigamill', 
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 
+    999999.99, 
+    999999.99, 
+    'gizmo', 
+    '/img/machine1.jpg'
+); 
+INSERT INTO product 
+VALUES(
+    60, 
+    'Inverse Osmosis Filter', 
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 
+    999999.99, 
+    999999.99, 
+    'gizmo', 
+    '/img/machine2.jpg'
+); 
+INSERT INTO product 
+VALUES(
+    61, 
+    'Particle Confiner', 
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 
+    999999.99, 
+    999999.99, 
+    'gizmo', 
+    '/img/machine3.jpg'
+); 
+INSERT INTO product 
+VALUES(
+    62, 
+    'Turboproducer', 
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 
+    999999.99, 
+    999999.99, 
+    'gizmo', 
+    '/img/machine4.jpg'
+); 
+INSERT INTO product 
+VALUES(
+    63, 
+    'Deluxe Steamer', 
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 
+    999999.99, 
+    999999.99, 
+    'gizmo', 
+    '/img/machine5.jpg'
+); 
+INSERT INTO product 
+VALUES(
+    64, 
+    'Lazer Kiln', 
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 
+    999999.99, 
+    999999.99, 
+    'gizmo', 
+    '/img/machine6.jpg'
+); 
+INSERT INTO product 
+VALUES(
+    65, 
+    'Megawinder', 
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 
+    999999.99, 
+    999999.99, 
+    'gizmo', 
+    '/img/machine8.jpg'
+); 
+INSERT INTO product 
+VALUES(
+    66, 
+    'Dimensional Scanner', 
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 
+    999999.99, 
+    999999.99, 
+    'gizmo', 
+    '/img/machine9.jpg'
+); 
+INSERT INTO product 
+VALUES(
+    67, 
+    'Hypersonic Broach', 
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 
+    999999.99, 
+    999999.99, 
+    'gizmo', 
+    '/img/machine10.jpg'
+); 
+INSERT INTO product 
+VALUES(
+    68, 
+    'Reactor Vat', 
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 
+    999999.99, 
+    999999.99, 
+    'gizmo', 
+    '/img/machine11.jpg'
+); 
+INSERT INTO product VALUES(
+    69, 
+    'Lab-in-a-Box', 
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 
+    999999.99, 
+    999999.99, 
+    'gizmo', 
+    '/img/machine13.jpg'
+); 
+INSERT INTO product 
+VALUES(
+    72, 
+    'Machine', 
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 
+    999999.99, 
+    999999.99, 
+    'gizmo', 
+    '/img/machine14.jpg'
+); 
+INSERT INTO product 
+VALUES(
+    73, 
+    'Machine', 
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 
+    999999.99, 
+    999999.99, 
+    'gizmo', 
+    '/img/machine15.jpg'
+); 
+INSERT INTO product 
+VALUES(
+    74, 
+    'Machine', 
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 
+    999999.99, 
+    999999.99, 
+    'gizmo', 
+    '/img/machine16.jpg'
+); 
+INSERT INTO product 
+VALUES(
+    75, 
+    'Machine', 
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 
+    999999.99, 
+    999999.99, 
+    'gizmo', 
+    '/img/machine17.jpg'
+); 
+INSERT INTO product 
+VALUES(
+    76, 
+    'Machine', 
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 
+    999999.99, 
+    999999.99, 
+    'gizmo', 
+    '/img/machine18.jpg'
+); 
+INSERT INTO product 
+VALUES(
+    77, 
+    'Machine', 
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 
+    999999.99, 
+    999999.99, 
+    'gizmo', 
+    '/img/machine19.jpg'
+); 
+INSERT INTO product 
+VALUES(
+    78, 
+    'Machine', 
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 
+    999999.99, 
+    999999.99, 
+    'gizmo', 
+    '/img/machine20.jpg'
+); 
+INSERT INTO product 
+VALUES(
+    79, 
+    'Machine', 
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 
+    999999.99, 
+    999999.99, 
+    'gizmo', 
+    '/img/machine21.jpg'
+); 
+INSERT INTO product 
+VALUES(
+    80, 
+    'Machine', 
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 
+    999999.99, 
+    999999.99, 
+    'gizmo', 
+    '/img/machine22.jpg'
+); 
+INSERT INTO product 
+VALUES(
+    81, 
+    'Machine', 
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 
+    999999.99, 
+    999999.99, 
+    'gizmo', 
+    '/img/machine23.jpg'
+); 
+INSERT INTO product 
+VALUES(
+    82, 
+    'Machine', 
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 
+    999999.99, 
+    999999.99, 
+    'gizmo', 
+    '/img/machine24.jpg'
+); 
+INSERT INTO product 
+VALUES(
+    83, 
+    'Machine', 
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 
+    999999.99, 
+    999999.99, 
+    'gizmo', 
+    '/img/machine25.jpg'
+);  
 
 
 -- Create Users table. The name "user" is reserved keyword, so the name is "users".
